@@ -1,0 +1,470 @@
+// Main
+// -------------------------
+body{ margin: 0; padding: 0; font-family: 'Montserrat', 'Source Sans Pro';
+   -webkit-box-sizing: border-box; -webkit-font-smoothing: antialiased; 
+   -webkit-transition: all 0.5s ease; color: #2a2a2a
+}
+
+.workshop-video{ position: relative; height: 0; overflow: hidden; height: auto;
+   iframe, object, embed{  padding: 0 15px; width: 100%; height: 300px;
+      @include breakFirst($screen-md){ height: 390px; }
+   }
+}
+
+.featured-video{ position: relative; height: 0; overflow: hidden; height: auto; padding: 0; 
+   margin: auto; 
+   iframe, object, embed{  width: 100%; min-height: 240px; padding: 0; }
+   @include breakFirst($screen-sm){ margin-right: 15px; }
+}
+
+
+.workshop-text{ padding: 15px 30px;}
+
+.row{ margin: 0;  }
+
+h1,h2,h3,h4,h5{ font-family: 'Montserrat'; font-weight: 700; color: #0a619f; text-transform: none;
+letter-spacing: 0;}
+
+p, li{ font-family: 'Source Sans Pro'; font-size: 18px; line-height: 1.6; letter-spacing: 0.5px; }
+
+a{ text-decoration: none;  }
+
+.bar{ margin: auto; max-width: 180px; height: 2px; background-color: #f8971d; display: block; 
+   margin-bottom: 20px; 
+}
+
+.bucket{ padding: 60px 0;  }
+
+.learn-more-btn, .cta-btn{ margin-top: 15px; margin-bottom: 15px; 
+   a { padding: 15px 30px ; text-align: center; font-family: 'Montserrat'; 
+      color: #fff; font-size: 14px; font-weight: 700px; letter-spacing: 1px; 
+      background-color: #f8971d;  text-transform: uppercase;transition: 0.3s ease;
+      &:hover{  background-color: #df7e07; transition: 0.3s ease; }
+   }
+}
+
+.center-btn{ display: inline-block; 
+   a { padding: 15px 40px ; text-align: center; font-family: 'Montserrat'; 
+      color: #fff; font-size: 14px; font-weight: 700px; letter-spacing: 1px; 
+      background-color: #f8971d;  text-transform: uppercase;transition: 0.3s ease;
+      &:hover{  background-color: #df7e07; transition: 0.3s ease; }
+   }
+}
+
+.call-to-action{ background-color: #f8f8f8; color: #2a2a2a; padding: 30px 45px; margin-top: 60px;
+   .cta-text{ width: 100%; display:block;
+      h3{ text-transform: uppercase; font-weight: 700; letter-spacing: 1px; font-size: 20px; 
+         margin-top: 30px; display: block; float: left; line-height: 1.6; 
+         &:before{ content: ''; display: inline-block; float: left; width: 30px; height: 30px;
+            background: url('check-mark.svg') no-repeat center center; background-size: cover;
+            margin-right: 10px;
+         }
+      }
+      p{ width: 100%; font-size: 18px; display: block; float: left;}
+      @include breakFirst($screen-md){width: 75%; height: auto; display: inline-block;  }
+   }
+   .cta-btn{ width: 200px; float: none; margin-top: 15px;
+      @include breakFirst($screen-md){ display: inline-block; float: right; margin-top:65px;}
+      a { padding: 15px 40px ; text-align: center; font-family: 'Montserrat'; 
+         color: #fff; font-size: 14px; font-weight: 700px; letter-spacing: 1px; 
+         background-color: #f8971d;  text-transform: uppercase;transition: 0.3s ease;
+         &:hover{  background-color: #df7e07; transition: 0.3s ease; }
+      }
+   }
+}
+
+.centered{ margin: auto;}
+
+.vert-center-wrap{width: 100%; margin: auto; height: 100%; display: table; 
+   .vert-center-content{ min-height: 100%; max-height: 101%; display: table-cell;
+      vertical-align: middle; }
+}
+
+.site{ max-width: 1800px; display: block; margin: 0 auto; overflow-x: hidden;
+   box-shadow: 0 0 25px #ccc;
+}
+
+.main-wrapper{ padding: 0; margin-top: 90px;
+   @include breakFirst($screen-md){ margin-top: 140px;}
+}
+.main-section{ padding: 30px 0; margin-bottom: 0;
+   h1{ font-size: 28px;
+      @include breakFirst($screen-sm){font-size: 32px;}
+   }
+   &:nth-child(even){background-color: #f8f8f8;   
+      @include breakFirst($screen-md){ padding: 60px 0; }
+   }
+   &.post-section{ background-color: #fff; }
+}
+
+.call-out-section{ padding: 30px 0; margin-bottom: 60px;   }
+
+.section-label{ color: #0a619f; font-family: 'Source Sans Pro';
+   margin: auto; text-transform: uppercase; font-weight: 700; 
+   letter-spacing: 1px; margin-bottom: 30px;
+   &:after{ content:''; width: 50px; height: 2px; background-color: #888;
+      display: block; margin: auto; margin-top: 15px; margin-bottom: 15px; }
+}
+
+
+.hero-wrap{
+   .hero-slides{ width: 100%; height: 400px; overflow: hidden;
+      .slide{  display: inline-block; width: 100%; height: 400px; background-size: cover;
+         background-position: center center; background-repeat: no-repeat;
+      }
+      &:after{ content: ''; position: absolute; top: 0; @include background-opacity($black, 0.4);
+         left: 0; width: 100%; margin: auto; height: 400px; z-index: 100;
+      }
+   }
+   .hero-title{ width: 100%; height: 200px; position: absolute; top: 240px; left: 0; z-index: 102;
+      h1.page-title{ letter-spacing: 1px; color: $white; text-shadow: 0 2px 2px #333; text-transform: uppercase;
+         font-weight: 400; font-size: 28px;
+      }
+      @include breakFirst($screen-md){ top: 300px; 
+         h1.page-title{ font-size: 36px; }
+      }
+   }
+
+}
+  
+
+
+/*=====HOME PAGE STYLES=====*/
+
+.hero-section{ height: auto;
+   @include breakFirst($screen-md){ min-height: 500px;} 
+   .intro-photo{ background-position: center 25%; background-size: cover;
+      background-repeat: no-repeat; padding: 15px 30px; min-height: 280px;
+      @include breakFirst($screen-xs){ background-position: center 20%; min-height: 480px; } 
+      @include breakFirst($screen-sm){min-height: 540px; }
+   }
+   .intro{ padding: 0 10px; 
+      @include breakFirst($screen-md){ padding: 15px 30px; }
+      h1{ font-size: 32px; display: block; margin: 30px 0;
+         @include breakFirst($screen-sm){font-size: 40px;}
+      }
+      p{ font-size: 16px; margin: 30px 0;
+         @include breakFirst( $screen-sm){ font-size: 18px; }
+      }
+   }
+}
+
+.intro, .service-info-wrap{ font-family: 'Source Sans Pro'; min-height: 300px;
+   padding: 15px 30px; font-size: 16px; 
+
+}
+
+.about-preview{
+   .service-text{ 
+      p{  max-width: 800px; font-size: 16px; margin: auto; margin-top: 30px; margin-bottom: 30px;
+         @include breakFirst( $screen-sm){ font-size: 18px; }
+      }
+   }
+
+   .service-photo-wrap{ width: 100%; height: auto; margin: auto; margin-top: 15px;
+      margin-bottom: 15px;
+      .service-photo{ width: 100%; height: 240px; display: block; background-size: cover;
+         background-repeat: no-repeat; overflow: hidden; margin: 10px auto;
+         .overlay{ width: 80%; height: 50%; background-color: rgba(10, 97, 159, 0.75); position: relative;
+            border: 1px solid #fff;;
+            top: 25%; cursor: pointer; margin: auto; transition: 0.3s ease; padding: 0 15px;
+            .service-label{ text-transform: uppercase; letter-spacing: 1px; font-weight: 700; 
+               a{ color: #fff;  font-size: 14px; 
+                  &:hover{ color: #f8971d; }
+               }
+            }
+           
+         }
+         @include breakFirst($screen-xs){}
+         @include breakFirst($screen-sm){}
+         @include breakFirst($screen-md){width: 25%; display: inline-block; margin: 10px; 
+            
+         }
+      }
+   }
+}
+
+.testimonial-feature{
+   .testimonial-slides{ min-height: 300px; overflow: hidden;  margin: 30px 0; 
+      @include breakFirst($screen-sm){min-height: 400px;}
+      .testimonial-preview{ background-color: #f8f8f8; padding: 30px 0; color: #666; 
+         height: 300px; display: inline-block; font-family: 'Source Sans Pro'; font-size: 16px;
+         p{ width: 80%; font-style: italic; font-size: 16px; margin: auto; font-family: 'Source Sans Pro';
+            text-align: center;
+            &:before{ content:open-quote; }
+            &:after{ content:close-quote; }
+            @include breakFirst($screen-sm){ font-size: 24px; }
+            span{ font-style: normal; letter-spacing: 0;} 
+      
+         }
+         @include breakFirst($screen-sm){ min-height: 400px; font-size: 24px; }
+      }
+      .slick-arrow{ display: none; }
+      ul.slick-dots{ position: absolute; margin: auto; padding: 0; 
+         top: 260px; left: 25%; right: 25%;
+         li{ display: inline-block; text-align: center; font-size: 0px;
+            button{ color: transparent; border: none; border-radius: 50%; 
+               width: 12px; height: 12px; background-color: #eee; margin: 0 3px 0 3px; 
+               transition: all .3s ease-in-out;
+            } 
+            &:hover{
+               button{ background-color: #f8971d; outline: none; }
+            }
+            &.slick-active{
+               button{ background-color: #f8971d; outline: none; }
+            }
+            button{ color: transparent; border: none; border-radius: 100%;  width: 12px;
+               height: 12px; background-color: #eee; margin: 0 3px 0 3px; padding: 8px;
+               transition: all .3s ease-in-out;
+            }
+         }
+         @include breakFirst($screen-sm){ top: 360px; }
+      }
+   }
+}
+
+.associates-wrap{
+   .associates{
+     
+      .associate-logo{ display: block; width: 80%; margin: auto; margin-bottom: 30px; height: auto; min-height: 150px;
+         max-height: 151px; background-size: 70%; background-position: center; background-repeat:
+         no-repeat;
+          @include breakFirst($screen-xs){ width: 33.33%; display: inline-block;}
+         @include breakFirst($screen-sm){ width: 33.33%; display: inline-block;}
+         @include breakFirst($screen-md){ width: 25%; margin: 10px;}
+        
+      }
+   }
+}   
+      
+   
+
+
+/*---SERVICES PAGE---*/
+.page-title-wrap{ height: 240px;
+   background: linear-gradient(#f8971d, #df7e07); box-shadow: inset 0 -15px 10px -5px rgba(0,0,0,.1);
+   .page-title{ color: #fff; letter-spacing: 1px; font-weight: 400; text-transform: uppercase;
+      display: block; margin: auto; font-size: 28px;
+      @include breakFirst($screen-sm){ font-size: 36px; }
+   }
+}
+   
+.page-nav{ border-bottom: 1px solid #f2f2f2;
+   .page-nav-wrap{ height: 120px; padding: 15px 0;
+      @include breakFirst($screen-md){ height: 80px; }
+      ul.service-nav{ list-style: none; padding: 0; margin: auto; text-transform: uppercase;
+         text-align: center;
+         li.service-nav-btn{  display: inline-block; font-family: 'Montserrat'; font-weight: 400; font-size: 14px;
+            text-align: center; margin: 0 1% 0 1%; cursor: pointer; color: #0a619f;
+            transition: all 0.3s ease;
+            &:hover{ color: #f8971d; }
+         }
+      }
+   }
+}
+
+.service-slides{ width: 100%; min-height: 280px; max-height: 281px; overflow: hidden;
+   @include breakFirst($screen-md){ min-height: 380px; max-height: 381px; } 
+   .service-image{ display: inline-block; min-height: 280px; max-height: 281px;
+      width: 100%; background-size: cover; background-position: center center;
+      background-repeat: no-repeat;
+      @include breakFirst($screen-md){ min-height: 380px; max-height: 381px; } 
+   }
+}
+   
+.slide-nav{ display: block; position: absolute; top: 45%; z-index: 999; width: 100%; 
+   .slide-btn{ @include background-opacity($white, 0.8); display: none; color: #666; cursor: pointer;
+      font-size: 1.75em; text-align: center; width: 60px; height: 60px; margin: 0; position: absolute;
+      transition: 0.3s ease; 
+      &:hover{ color: #f8971d; background-color: $white; transition: 0.3s ease;  } 
+   }
+   .prev-btn, .next-btn{ display: inline-block;}
+   .prev-btn{ float: left;  }
+   .next-btn{ float: right; right: 30px; }
+}
+
+.service-info-wrap{  padding-left: 25px; margin: auto;
+   h1{ font-size: 28px; 
+      @include breakFirst($screen-md){ font-size: 36px; }
+   }
+   p{ font-size: 16px;
+       @include breakFirst($screen-md){ font-size: 18px; }
+   }
+   @include breakFirst($screen-md){padding: 30px 0 0 45px; }
+}
+
+
+
+//About Page
+//----------------------------
+
+.about-wrapper{ margin-top: 30px;
+   .about-photo{ min-height: 240px; max-height: 241px; background-size: cover;
+      background-repeat: no-repeat; background-position: center center;
+      @include breakFirst($screen-sm){min-height: 380px; max-height: 381px;}
+      @include breakFirst($screen-md){ min-height: 480px; max-height: 481px; }
+   }
+   .about-text{
+      @include breakFirst($screen-md){ padding: 15px 30px;}
+      p{ font-size: 16px; line-height: 1.6;
+         @include breakFirst($screen-sm){font-size: 18px;}
+      }
+   }
+}
+
+
+// Testimonials
+//----------------------------
+
+.testimonial-wrap{ width: 90%; margin: auto; font-size: 16px;
+   @include breakFirst($screen-xs){ max-width: 540px; }
+   @include breakFirst($screen-sm){ max-width: 800px; }
+   strong{
+      em{ font-family: 'Source Sans Pro'; letter-spacing: 0; color: #888; }
+   }
+}
+
+
+// Resources
+//-----------------------------
+
+.form{ background-color: #0a619f; text-align: center; margin: auto; margin-bottom: 10px; display: block;
+   height: 200px;
+   a{ color: $white; text-transform: uppercase; font-weight: 700; display: block;
+      span{ font-weight: 400; font-size: 12px; border: 1px solid $white; padding: 10px 15px;
+         display: block; transition: 0.3s ease;  margin: auto; margin-top: 10px; width: 180px;
+         &:hover{ border: 1px solid #f8971d; color: #f8971d; transition: 0.3s ease; }
+      }
+   }
+   @include breakFirst($screen-sm){ display: inline-block; width: 32%; margin-right: 5px; }
+}
+
+
+//News Page & Single Posts
+//-----------------------------
+
+
+.news-wrap{ background-color: $white !important;
+   .posts-wrap{ 
+      .post{ padding: 20px 15px; border-bottom: 2px solid #f8f8f8; margin-bottom: 30px;
+            transition: 0.2s ease-in-out; cursor: pointer;
+         &:hover{ background-color: #f8f8f8; transition: 0.2s  ease-in-out; }
+         .post-wrap{
+            h2{ font-size: 24px; text-transform: capitalize;
+               @include breakFirst($screen-sm){ font-size: 28px; }
+               a{ color: #0a619f; }
+            }
+            .entry-meta{ color: #888;
+               p{ font-size: 16px; text-transform: capitalize; }
+               span{ text-transform: uppercase; }
+            }
+         }
+      }
+      .blog-pagination{ padding: 30px 0; text-transform: uppercase; width: 100%;
+         .next-link{ text-align: center; background-color: #f8f8f8; width: 49%;
+            padding: 20px 0; position: relative; display: inline-block; font-size: 14px;
+            @include breakFirst($screen-sm){ font-size: 20px;}
+            a{color: #f8971d;}
+         }
+         .disabled{ position: relative; text-align: center; background-color: transparent; color: #ccc;}
+
+         .prev-link{  float: left; display: inline-block; background-color: #f8f8f8; padding: 20px 0; position: relative;
+            width: 49%; text-align: center; margin-right: 2%; font-size: 14px;
+            @include breakFirst($screen-sm){ font-size: 20px;}
+            a{color: #f8971d;}
+         }
+         
+         
+      }
+   }
+   
+}
+
+.sidebar{ 
+   &:nth-child(2), &:nth-child(3){ background-color: #f8f8f8; padding: 15px 25px; margin-bottom: 30px; }
+   .screen-reader-text{ display: none; }
+   h5{ font-size: 16px; padding-bottom: 10px; border-bottom: 2px solid #eee; text-transform: uppercase;
+      font-weight: 400; letter-spacing: 0.5px;
+   }
+   ul{
+      li{ font-size: 14px; font-family:'Montserrat'; color: #999; line-height: 2; 
+         a{ color: #999; 
+            &:hover{ color: #f8971d; }
+         }
+      }
+   }
+
+   form{ 
+      input{ border-style: none; margin-bottom: 30px;
+         &.search-field{ width: 100%; background-color: #f8f8f8; height: 45px; float: left; 
+            display: inline-block; padding-left: 5px; 
+            &::-webkit-input-placeholder{ font-family:'Montserrat'; font-size: 14px; letter-spacing: 0.5px; 
+               text-transform: uppercase;
+            }
+            &:-moz-input-placeholder{ font-family:'Montserrat';font-size: 14px; letter-spacing: 0.5px; 
+               text-transform: uppercase;
+            }
+            &:-ms-input-placeholder{ font-family:'Montserrat'; font-size: 14px; letter-spacing: 0.5px; 
+               text-transform: uppercase;
+            }
+
+            &:focus{ outline: none; background-color: #eee; }
+         }
+         &.search-submit{ margin-left: -65px; display: inline-block; height: 35px; width: 60px; margin-top: 5px;
+            background-color: #0a619f; color: transparent; background-image: url('search-icon.svg');
+            background-size: 60%; background-repeat: no-repeat; background-position: center center;
+            cursor: pointer; transition: 0.3s ease;
+            &:hover{ background-color: #004068; transition: 0.3s ease; }
+         }
+      }
+   }
+}
+
+.post-content{ max-width: 800px; height: auto; margin: auto;
+   .post-meta{ font-family:'Source Sans Pro'; font-weight: 700; letter-spacing: 0; color: #666;
+      text-transform: capitalize;
+   }
+}
+
+// Contact Page
+// --------------------------
+
+.contact-wrapper{
+   p{ max-width: 800px; margin: auto; text-align: center; font-size: 16px;
+      @include breakFirst($screen-md){ font-size: 18px; }
+   }
+   .contact-form{ margin-top: 30px;
+      .form-col{ float: none; width: 100%; 
+         &:first-child{ margin-bottom: 15px; }
+         @include breakFirst($screen-md){
+            float: left; width: 50%;
+            &:first-child{ border-right: 8px solid transparent; margin-bottom: 0;}
+            &:last-child{ border-left: 8px solid transparent; }
+         }
+         
+         input{ width: 100%; appearance: none; padding: 25px; border: none; background-color: #eee;
+            &::-webkit-input-placeholder{ font-family:'Montserrat'; font-size: 16px; color: #888; }
+            &:focus{ background-color: #e2e2e2; outline: none; }
+         }
+
+      }
+      .form-row{
+         textarea{width: 100%; appearance: none; padding: 15px; border: none; background-color: #eee;
+            margin-top: 20px;
+            &::-webkit-input-placeholder{ font-family:'Montserrat'; font-size: 16px; color: #888; }
+            &:focus{ background-color: #e2e2e2; outline: none; }
+         }
+      }
+      input[type="submit"]{ appearance: none; padding: 15px 30px; margin-top: 15px; border: 0;
+         background-color: #f8971d; font-family: 'Montserrat'; color: $white; text-transform: uppercase;
+         font-size: 16px; cursor: pointer;
+         &:focus{ outline: none; }
+         &:hover{ background-color: #df7e07; transition: 0.3s ease;}
+      }
+   }
+}
+
+
+
+
+

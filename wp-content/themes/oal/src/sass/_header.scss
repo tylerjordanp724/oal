@@ -1,0 +1,76 @@
+// Header
+// -------------------------
+header{ margin: auto; max-width: 1800px; padding: 0; position: fixed; top: 0; left: 0; right: 0; 
+	background-color: #fff; box-shadow: 0 0 5px rgba(0,0,0,0.5); height: 90px; z-index: 1000; 
+	@include breakFirst($screen-md){ height: auto; }
+	.phone-number{ display: none;
+		@include breakFirst($screen-sm){}
+		@include breakFirst($screen-md){ width: 180px; height: 30px; float: right;display: inline-block; 
+      margin-top: 45px; margin-right: 30px; }
+		&:before{ content:'\f095 '; display: inline-block; color: #0a619f; font-family:'FontAwesome';
+      vertical-align: middle; font-size: 20px;
+    }
+		a{ color: #0a619f;
+			&:hover{ color: #f8971d; transition: all 0.3s ease;}
+		}
+	}
+  	.menu-btn{ display: block; width: 35px; height: 35px; float: right; position: relative; top: 35px;
+     cursor: pointer;
+
+  		.menu-slice{ position: relative; width: 100%; height: 2px; background-color: #0a619f;
+         	-webkit-transition: all 0.3s ease;
+         	&:nth-child(1){ top: 0;}
+         	&:nth-child(2){ top: 5px; }
+         	&:nth-child(3){ top: 10px; }   
+     	}
+		@include breakFirst($screen-md){display: none;}	
+  	}
+
+  	.logo{ width: 250px; height: 100px; margin-left: 0; background-repeat: no-repeat;
+  		margin-top: 15px;
+  		@include breakFirst($screen-md){ width: 400px; height: 80px; margin: 15px 0 15px 30px;
+  			background-repeat: no-repeat; background-size: 100%; background-position: center center;
+  		}
+	}
+
+	.nav-wrap{ width: 100%; padding: 0; 
+    @include breakFirst($screen-md){margin-bottom: 0;}
+  }
+
+	.main-menu{ margin: 0 auto; padding: 0;position: relative; display: block; clear: both; width: 100% !important;
+    text-align: center; background-color: #0a619f; height: 0px; 
+    overflow: hidden; top: -25px; transition: height 0.3s ease;
+      &.menu-open{ height: 318px; 
+        @include breakFirst($screen-md){ height: auto; }
+      }
+  	 	@include breakFirst($screen-md){height: auto; transition: none; top: 0; }
+  		ul{
+  	 		li{ display: block; margin: 10px 0; padding: 0 10px 10px 0;text-transform: uppercase; text-align: right;
+      			letter-spacing: 0.5px; font-size: 15px; font-weight: 400; font-family: 'Montserrat'; font-weight: 400;
+            border-bottom: 1px solid rgba(0,0,0, .15); padding-right: 30px; 
+      			@include breakFirst($screen-md){ display: inline-block; padding: 0 1%; text-align: center;
+            border-bottom: none;}
+            &:last-child{ border: none; }
+      			&.current_page_item{
+      				a{
+      					&:visited{ color: #f8971d; }
+      				}
+      			}
+      			a{ text-decoration: none; color: #fff; 
+      				&:hover{ color: #f8971d; }
+
+      			}
+      		}
+  	 	}
+	}
+}
+
+.active{ 
+    .menu-slice{
+    	&:nth-child(1){ transform: translate3d(0, 5px, 0) rotate(45deg);}
+    	&:nth-child(2){ opacity: 0;}
+    	&:nth-child(3){ transform: translate3d(0, -9px, 0) rotate(-45deg);}
+    }
+}
+
+      // .show-menu{ display: block; }
